@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose-test-task
+spec:
+  steps:
+    - name: nose-test
+      image: python:3.9
+      command: ["nosetests"]
+      args: ["tests/"]
