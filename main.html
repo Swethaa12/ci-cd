@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Event Handling Example</title>
+<style>
+    /* Style for button */
+    #myButton {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
 
@@ -13,6 +24,15 @@
     // Function to handle button click event
     function handleClick() {
         alert("Button clicked!");
+        toggleBackgroundColor();
+    }
+
+    // Function to toggle background color of the button
+    function toggleBackgroundColor() {
+        var button = document.getElementById("myButton");
+        var currentColor = button.style.backgroundColor;
+        var newColor = (currentColor === "red") ? "#007bff" : "red"; // Toggles between blue and red
+        button.style.backgroundColor = newColor;
     }
 
     // Get the button element
