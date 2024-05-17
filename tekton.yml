@@ -1,6 +1,16 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
+  name: cleanup-task
+spec:
+  steps:
+    - name: cleanup
+      image: alpine:latest
+      command: ["sh"]
+      args: ["-c", "echo 'Perform cleanup steps here'"]
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
   name: nose-test-task
 spec:
   steps:
